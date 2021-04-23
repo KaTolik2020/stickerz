@@ -48,16 +48,17 @@
         </main>
         <footer>
             <h2>Contacts</h2>
-            <form class="contact-form" action="????" method="POST">
-                <label for="user-name">Your name:</label>
-                <input id="user-name" type="text" name="user-name" placeholder="Your name" required>
-                <br>
-                <label for="user-email">
-                    Your email:
+            <form class="login-form">
+                <label>
+                    User name: <input name="name" type="text" placeholder="User name" required>
                 </label>
-                <input id="user-email" type="email" name="user-email" placeholder="Your email" required>
                 <br>
-                <input class="button card-button" type="submit">                
+                <label>
+                    Password: <input name="password" type="password" required>
+                </label>
+                <br>
+                <input type="submit">
+                <input type="reset">
             </form>
             <p>Some contacts info...</p>
         </footer>
@@ -65,5 +66,6 @@
         <script src="js/products.js"></script>
         <script src="js/countdown.js"></script>
         <script src="js/carousel.js"></script>
+        <script src="js/login-form.js"></script>
     </body>
 </html>
