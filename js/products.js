@@ -14,7 +14,7 @@ function renderProducts(sortOrder) {
                     <p>${product.description}</p>
                     <div class="buttons">
                         <button class="button card-button">Info</button>
-                        <button class="button card-button">Buy - ${product.price}</button>
+                        <button class="button card-button">Buy - ${product.convertedPrice} (${product.currency})</button>
                     </div>
                 </article>`;
     }
@@ -44,13 +44,28 @@ function sortDescending() {
 // }
 
 async function fetchProducts() {
-    try {
-        const response = await fetch('products.json');
-        products = await response.json();
-    } catch (err) {
-        alert(err.message);
-    }
+    const response = await fetch('products.json');
+    products = await response.json();
+    await convertCurrency();
     renderProducts();
 }
 
 fetchProducts();
+
+async function convertCurrency() {
+    const startCurrency = 'USD';
+    const targetCurrency = document.querySelector('.currency-input').value;
+    const response = await fetch(`https://api.exchangerate-api.com/v4/latest/${startCurrency}`);
+    const rates = await response.json();
+    const rate = rates.rates[targetCurrency];
+    for (const product of products) {
+        product.convertedPrice = (product.price * rate).toFixed(2);
+        product.currency = targetCurrency;
+    }
+}
+
+document.querySelector('.convert-currency')
+    .addEventListener('click', async () => {
+        await convertCurrency();
+        renderProducts();
+    });
