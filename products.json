@@ -1,0 +1,37 @@
+[
+    {
+        "id": "1",
+        "title": "Baby Yoda",
+        "image": "img/baby-yoda.svg",
+        "description": "Baby Yoda sticker",
+        "price": 49.99
+    },
+    {
+        "id": "2",
+        "title": "Banana",
+        "image": "img/banana.svg",
+        "description": "Banana sticker",
+        "price": 19.99
+    },
+    {
+        "id": "3",
+        "title": "Girl",
+        "image": "img/girl.svg",
+        "description": "Girl sticker",
+        "price": 24.99
+    },
+    {
+        "id": "4",
+        "title": "Viking",
+        "image": "img/viking.svg",
+        "description": "Viking sticker",
+        "price": 34.99
+    },
+    {
+        "id": "5",
+        "title": "Kitty",
+        "image": "https://placekitten.com/400/400",
+        "description": "Kitten",
+        "price": 30.99
+    }
+]

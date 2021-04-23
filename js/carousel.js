@@ -25,6 +25,7 @@ function prevSlide() {
     showSlide();
 }
 
+showSlide();
 setInterval(nextSlide, 3000);
 
 document.querySelector('.carousel-prev').addEventListener('click', prevSlide);
